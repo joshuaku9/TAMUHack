@@ -6,37 +6,26 @@
     </head>
 
     <body>
-        <h1> Flash Chatterbot </h1>
-        <div>
-            <div id="chatbox">
-                <p class="botText"><span> Hi! I'm chatterbot. </span></p>
-            </div>
-            <div id="userInput">
-                <input id="textInput" type="text" name="msg" placeholder="Message">
-                <input id="buttonInput" type="submit" value="Send">
-            </div>
-            <script>
-                function getBotResponse(){
-                    var rawText = $("#textInput").val(); 
-                    var userHtml = '<p class="userText"><span>' + rawText + '</span></p>';
-                    $("#textInput").val();
-                    $("#chatbox").append(userHtml);
-                    document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
-                    $.get("/get", {msg: rawText }).done(function(data) {
-                        var botHtml = '<p class="botText"><span>' + data + '</span></p>';
-                        $("#chatbox").append(botHtml);
-                        document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
-                    });
-                }
-                $("#textInput").keypress(function(e) {
-                    if (e.which == 13) {
-                        getBotResponse();
-                    }
-                });
-                $("#buttonInput").click(function () {
-                    getBotResponse();
-                })
-            </script>
-        </div>
+        <img src="background.jpg" class= "img_2" alt="background" width="1920" height="1080">
+
+        <!-- <h1> <img src="logo.png" alt="logo" width="350" height="108"></h1> -->
+       
+            <iframe
+                allow="microphone;"
+                width="350"
+                height="430"
+               
+                src="https://console.dialogflow.com/api-client/demo/embedded/28d33d17-14cd-4077-a5ea-2bc758d89b1b">
+            </iframe>
+
+
+
     </body>
-</html>
+
+
+
+
+
+
+
+    </html>
